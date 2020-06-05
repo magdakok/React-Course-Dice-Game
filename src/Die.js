@@ -8,7 +8,8 @@ class Die extends Component {
 
         return (
             <div>
-                <i className={face}></i>
+                <i className={face + ((this.props.isRolling ? ' animated' : ''))} ></i>
+
             </div>
         )
     }

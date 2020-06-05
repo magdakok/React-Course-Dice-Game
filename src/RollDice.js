@@ -9,7 +9,8 @@ class RollDice extends Component {
         this.getRandom = this.getRandom.bind(this);
         this.state = {
             die1 : this.getRandom(),
-            die2 : this.getRandom()
+            die2 : this.getRandom(),
+            isRolling: false
         }
     }
 
@@ -24,14 +25,18 @@ class RollDice extends Component {
             die1 : this.getRandom(),
             die2 : this.getRandom()
         });
+        this.setState({isRolling:true});
+        setTimeout(()=> { this.setState({isRolling:false}); }, 1000);
     }
 
     render(){
         return (
-            <div>
-                <Die val={this.state.die1}/>
-                <Die val={this.state.die2}/>
-                <button onClick={this.buttonHandler}>Roll the dices!</button>
+            <div className="RollDice">
+                <div className="RollDice-box">
+                    <Die val={this.state.die1} isRolling={this.state.isRolling}/>
+                    <Die val={this.state.die2} isRolling={this.state.isRolling}/>
+                </div>
+                <button onClick={this.buttonHandler} disabled={this.state.isRolling}>{this.state.isRolling ? 'Wait please' : 'Roll the dices!'}</button>
             </div>
         )
     }
