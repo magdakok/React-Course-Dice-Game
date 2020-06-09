@@ -1,6 +1,6 @@
 # The Modern React Bootcamp Course exercise: Dice Game
 
-This app lets us roll a pair of dice. "Roll dice" button becomes disabled while rolling.
+**This app lets us roll a pair of dice. "Roll dice" button becomes disabled while rolling.**
 
 ---
 
